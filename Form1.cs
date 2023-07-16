@@ -40,12 +40,18 @@ namespace WinFormsApp1
                 if (role == "admin")
                 {
                     MessageBox.Show("Login successful. You are logged in as an admin.");
-                }
+                        Form2 secondForm = new Form2();
+                        secondForm.Show();
+                        secondForm.ShowDialog();
+                    }
                 else if (role == "user")
                 {
                     MessageBox.Show("Login successful. You are logged in as a user.");
+                        Form2 secondForm = new Form2();
+                        secondForm.Show(); 
+                        secondForm.ShowDialog();
+                    }
                 }
-            }
             else
             {
                 MessageBox.Show("Invalid username or password.");
@@ -88,5 +94,10 @@ namespace WinFormsApp1
             MessageBox.Show("Registration successful. You can now log in.");
         }
     }
-}
+
+        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
