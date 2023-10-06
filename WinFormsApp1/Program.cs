@@ -1,3 +1,5 @@
+using WinFormsApp1.Models;
+
 namespace WinFormsApp1
 {
     internal static class Program
@@ -12,6 +14,13 @@ namespace WinFormsApp1
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            UserModel userModel = new UserModel() { Username = "JohnDoe" };
+            UserViewForm userViewForm = new UserViewForm(new UserController(userModel, new UserViewForm()));
+
+            Application.Run(userViewForm);
         }
     }
 }
